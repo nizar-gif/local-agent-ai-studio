@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Agent Platform</title>
+    <style>
+      :root {
+        --color-primary: #8B5CF6;
+        --color-primary-hover: #7C3AED;
+        --color-secondary: #1F2937;
+        --color-background: #111827;
+        --color-card: #1F2937;
+        --color-text-primary: #F9FAFB;
+        --color-text-secondary: #D1D5DB;
+        --color-border: #374151;
+        --color-danger: #EF4444;
+      }
+      html.light {
+        --color-secondary: #F3F4F6;
+        --color-background: #F9FAFB;
+        --color-card: #FFFFFF;
+        --color-text-primary: #1F2937;
+        --color-text-secondary: #6B7280;
+        --color-border: #E5E7EB;
+      }
+      body {
+        background-color: var(--color-background);
+        color: var(--color-text-primary);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      /* Basic form validation styling */
+      input:invalid:not(:placeholder-shown), 
+      textarea:invalid:not(:placeholder-shown),
+      select:invalid:not(:placeholder-shown) {
+        border-color: var(--color-danger);
+      }
+      input:invalid:not(:placeholder-shown):focus, 
+      textarea:invalid:not(:placeholder-shown):focus,
+      select:invalid:not(:placeholder-shown):focus {
+        --tw-ring-color: var(--color-danger);
+        border-color: var(--color-danger);
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary': 'var(--color-primary)',
+              'primary-hover': 'var(--color-primary-hover)',
+              'secondary': 'var(--color-secondary)',
+              'background': 'var(--color-background)',
+              'card': 'var(--color-card)',
+              'text-primary': 'var(--color-text-primary)',
+              'text-secondary': 'var(--color-text-secondary)',
+              'border': 'var(--color-border)',
+              'danger': 'var(--color-danger)',
+            },
+          },
+        },
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@heroicons/react/": "https://aistudiocdn.com/@heroicons/react@^2.2.0/",
+    "uuid": "https://aistudiocdn.com/uuid@^13.0.0",
+    "lodash": "https://aistudiocdn.com/lodash@^4.17.21"
+  }
+}
+</script>
+</head>
+  <body class="bg-background text-text-primary">
+    <div id="root"></div>
+    <script>
+      window.addEventListener('error', function(event) {
+        console.error('Unhandled global error:', {
+          message: event.message,
+          filename: event.filename,
+          lineno: event.lineno,
+          colno: event.error
+        });
+      });
+
+      window.addEventListener('unhandledrejection', function(event) {
+        console.error('Unhandled promise rejection:', event.reason);
+      });
+    </script>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

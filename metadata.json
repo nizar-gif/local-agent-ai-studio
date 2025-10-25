@@ -1,0 +1,5 @@
+{
+  "name": "AI Agent Platform UI",
+  "description": "A frontend for a plug-and-play AI Agent Platform, providing interfaces for system monitoring, task management, multi-agent chat, RAG, and automation.",
+  "requestFramePermissions": []
+}
