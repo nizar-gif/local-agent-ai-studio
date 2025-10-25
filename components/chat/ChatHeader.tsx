@@ -15,9 +15,10 @@ interface ChatHeaderProps {
     onSummarizeChat: () => void;
     onAttachFile: () => void;
     showTokens: boolean;
+    onOpenAdvancedSettings: () => void;
 }
 
-const ChatHeader: React.FC<ChatHeaderProps> = ({ sessions, activeSession, onSessionChange, agents, activeAgentId, onAgentChange, onNewChat, onRenameSession, onDeleteSession, onSummarizeChat, onAttachFile, showTokens }) => {
+const ChatHeader: React.FC<ChatHeaderProps> = ({ sessions, activeSession, onSessionChange, agents, activeAgentId, onAgentChange, onNewChat, onRenameSession, onDeleteSession, onSummarizeChat, onAttachFile, showTokens, onOpenAdvancedSettings }) => {
     const [sessionMenuOpen, setSessionMenuOpen] = useState(false);
     const sessionMenuRef = useRef<HTMLDivElement>(null);
     const systemMode = 'LOCAL'; // Mock data
@@ -103,7 +104,7 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({ sessions, activeSession, onSess
                  <button onClick={onAttachFile} className="p-2 rounded-md hover:bg-secondary" title="Attach File">
                     <PaperClipIcon className="h-5 w-5 text-text-secondary" />
                 </button>
-                <button onClick={() => alert('Chat settings would open here.')} className="p-2 rounded-md hover:bg-secondary" title="Chat Settings">
+                <button onClick={onOpenAdvancedSettings} className="p-2 rounded-md hover:bg-secondary" title="Chat Settings">
                     <Cog6ToothIcon className="h-5 w-5 text-text-secondary" />
                 </button>
             </div>
